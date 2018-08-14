@@ -81,14 +81,13 @@ static unsigned long boot_done;
 unsigned int cpu_hotplug_disable_set = false;
 static int g_is_suspend = false;
 
-#if 0
 struct unplug_work_info {
 	unsigned int cpuid;
 	struct delayed_work unplug_work;
 	struct dbs_data *dbs_data;
 };
+
 static DEFINE_PER_CPU(struct unplug_work_info, uwi);
-#endif
 
 struct delayed_work plugin_work;
 struct delayed_work unplug_work;
@@ -98,7 +97,7 @@ struct work_struct unplug_all_work;
 static int cpu_num_limit_temp;
 static void sprd_thm_unplug_cpu(struct work_struct *work);
 
-static DEFINE_PER_CPU(struct unplug_work_info, uwi);
+//static DEFINE_PER_CPU(struct unplug_work_info, uwi);
 
 static DEFINE_SPINLOCK(g_lock);
 static unsigned int percpu_total_load[CONFIG_NR_CPUS] = {0};
@@ -167,8 +166,6 @@ int cpu_core_thermal_limit(int cluster, int max_core)
 {
 
 	struct sd_dbs_tuners *sd_tuners = g_sd_tuners;
-	int cpus = 0;
-	int i = 0;
 
 	if (sd_tuners->cpu_num_limit <=  max_core) {
 		sd_tuners->cpu_num_limit = max_core;
@@ -757,7 +754,6 @@ static unsigned int sd_unplug_avg_load11(int cpu, struct sd_dbs_tuners *sd_tunne
 	int avg_load = 0;
 	int cur_window_pos = 0;
 	int cur_window_pos_tail = 0;
-	int idx = 0;
 	/*
 	initialize the window size for the first time
 	cur_window_cnt[cpu] will be cleared when the core is unpluged
@@ -1542,7 +1538,7 @@ static ssize_t store_cpu_hotplug_disable(struct dbs_data *dbs_data, const char *
 		size_t count)
 {
 	struct sd_dbs_tuners *sd_tuners = dbs_data->tuners;
-	unsigned int input, cpu;
+	unsigned int input;
 	int ret;
 	ret = sscanf(buf, "%u", &input);
 
