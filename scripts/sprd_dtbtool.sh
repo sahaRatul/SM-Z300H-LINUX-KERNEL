@@ -66,7 +66,7 @@ function help() {
 OUT="merged-dtb"
 OUT_TMP="multi.tmp"
 
-OUT_DIR="./arch/arm/boot"
+OUT_DIR="../arch/arm/boot"
 DTC_PATH=/usr/bin
 
 SPRD_MAGIC="SPRD"
