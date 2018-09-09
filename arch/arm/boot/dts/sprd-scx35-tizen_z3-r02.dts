@@ -12,7 +12,7 @@
 
 /dts-v1/;
 
-#include "sprd-scx35-tizen_z3-r02.dtsi"
+/include/ "sprd-scx35-tizen_z3-r02.dtsi"
 
 / {
 	model = "Z3";
