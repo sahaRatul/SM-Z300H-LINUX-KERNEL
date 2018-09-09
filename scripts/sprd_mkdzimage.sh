@@ -57,6 +57,7 @@ PAD=2048
 
 
 if [ "$#" -eq "0" ]; then
+	echo "0 args"
 	help
 fi
 
@@ -101,6 +102,7 @@ do
 done
 
 if [ "z${KERNEL}" == "z" ] || [ "z${DEVICETREE}" == "z" ]; then
+	echo "Unspecified error"
 	help
 fi
 
