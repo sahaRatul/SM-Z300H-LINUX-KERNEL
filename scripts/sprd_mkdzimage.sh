@@ -54,6 +54,7 @@ KERNEL_ADDR=32768	# 0x00008000
 ATAGS_ADDR=31457280	# 0x01e00000
 KERNEL="../arch/arm/boot/zImage"
 DEVICETREE="../arch/arm/boot/merged-dtb"
+OUTPUT_FILE="../arch/arm/boot/dzImage"
 PAD=2048
 
 
