@@ -47,12 +47,13 @@ function help() {
 ## Defines
 OUT="dzImage"
 OUT_TMP="dzImage.tmp"
-OUT_DIR="./arch/arm/boot"
+OUT_DIR="../arch/arm/boot"
 
 MAGIC="NZIT"		# 0x54495A4E
 KERNEL_ADDR=32768	# 0x00008000
 ATAGS_ADDR=31457280	# 0x01e00000
-
+KERNEL="../arch/arm/boot/zImage"
+DEVICETREE="../arch/arm/boot/merged-dtb"
 PAD=2048
 
 
